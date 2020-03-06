@@ -10,7 +10,7 @@ text="YOU HAVE:\n"
 dis=[]
 db=m.connect("localhost","root","yesimkira","med")
 disease=[]
-xoxo=[]
+xo=[]
 
 class App(T.Tk):
     def __init__(self,*args,**kwargs):
@@ -72,7 +72,7 @@ class Sorting(T.Frame):
             global dis
             global q
             global text
-            global xoxo
+            global xo
             global t
             global cnt
             for b in selection:
@@ -90,14 +90,14 @@ class Sorting(T.Frame):
                 cursor2=db.cursor()
                 cursor2.callproc('probchck',[i,])
                 result2=cursor2.fetchall()
-                xoxo.extend([x[0] for x in result2])
+                xo.extend([x[0] for x in result2])
                 cursor2.close()
             cnt=[dis.count(i) for i in disease]
             t=dict(zip(disease,cnt))
             a=0
             per=[]
             for i in t:
-                per.append(float((t[i]/len(dis))*(t[i]/xoxo[a])*100))
+                per.append(float((t[i]/len(dis))*(t[i]/xo[a])*100))
                 a=a+1
             a=0
             trying=max(per)
