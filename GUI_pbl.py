@@ -8,7 +8,7 @@ import tkinter as T
 import MySQLdb as m
 text="YOU HAVE:\n"
 dis=[]
-db=m.connect("localhost","root","yesimkira","med")
+db=m.connect("localhost","root","ye*********","med")
 disease=[]
 xo=[]
 
